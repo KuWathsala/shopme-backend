@@ -1,2 +1,0 @@
-# shopme-backend
-shopme-backend
