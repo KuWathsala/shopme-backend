@@ -102,21 +102,7 @@ namespace webapi.Controllers
         public IActionResult UpdatePayment()//string order_id, string status_code
         {
             var s = new StreamReader(Request.Body).ReadToEnd();
-            //return Ok(SendEmail("wathdanthasinghe@gmail.com", s.ReadToEnd()));
             return Ok(_orderService.UpdatePayment(Int32.Parse(s.Substring(29, 3)), Int32.Parse(s.Substring(112, 1))));
-            //Task<string> x;
-            //using (StreamReader reader = new StreamReader(Request.Query, Encoding.UTF8))
-            //{
-            // x= reader.ReadToEndAsync();
-            //}
-            //var s = new StreamReader(Request.Body);
-
-            //PaymentVM payment = JsonConvert.DeserializeObject<PaymentVM>(s.ReadToEnd());
-            //return Ok(SendEmail("wathdanthasinghe@gmail.com",));// payment.order_id  
-
-            //return Ok(_orderService.UpdatePayment(payment.order_id, payment.status_code));
-            //return Ok(order_id) ;
-            //return Ok();
         }
 
 
@@ -137,7 +123,7 @@ namespace webapi.Controllers
                     smtp.EnableSsl = true;
                     smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
 
-                    NetworkCredential networkCredential = new NetworkCredential("174025d@uom.lk", "KuWathsala@97");//mhnedsmhjtmhrt
+                    NetworkCredential networkCredential = new NetworkCredential("*********", "*********");//mhnedsmhjtmhrt
                     smtp.Credentials = networkCredential;
                     smtp.Send(mailMessage);
                     scope.Complete();

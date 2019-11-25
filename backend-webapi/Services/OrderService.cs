@@ -387,7 +387,7 @@ namespace webapi.Services
                     smtp.EnableSsl = true;
                     smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
 
-                    NetworkCredential networkCredential = new NetworkCredential("174025d@uom.lk", "KuWathsala@97");//mhnedsmhjtmhrt
+                    NetworkCredential networkCredential = new NetworkCredential("*********", "*********");//mhnedsmhjtmhrt
                     smtp.Credentials = networkCredential;
                     smtp.Send(mailMessage);
                     scope.Complete();
